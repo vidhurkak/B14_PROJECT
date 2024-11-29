@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light background to match the login page */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333; /* Dark background to match the login page */
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form p {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ccc; /* Light gray label color */
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #555;
+            background-color: #444; /* Dark input field */
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; /* Green button to match login page */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #back {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            width: 100px;
+            text-align: center;
+            background-color: #ccc; /* Light gray back button */
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #back:hover {
+            background-color: #bbb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f4f4f4; /* Matching the light background from the login page */
+        }
+    </style>
+</head>
+<body>
+    <h1>Register yourself for further process!</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+            </p>
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+    <a href="/" id="back">Back</a>
+</body>
+</html>
